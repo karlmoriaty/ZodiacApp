@@ -1,35 +1,41 @@
-# ZodiacApp - 星座查询桌面应用
+# ZodiacApp
 
-一个基于 Python + Tkinter 的星座查询桌面小工具，支持根据出生日期查询星座信息。
+A small Python/Tkinter desktop app: enter a birth date and it tells you which of the
+twelve zodiac signs it falls under, with the date range and a short description.
+Packed with PyInstaller into a single Windows executable.
 
-## 功能特性
+## Features
 
-- 根据日期自动计算对应星座
-- 12 星座的日期范围定义与描述
-- 内置背景音乐播放
-- PyInstaller 打包为 Windows 单文件可执行程序
+- Year/month/day spin boxes instead of free-text dates, with validation
+- All twelve signs with their date ranges and descriptions
+- Background music loop, with a fallback that keeps the app running if the audio
+  file or device is missing
+- Single-file Windows build via `zodiac_app.spec`
 
-## 技术栈
-
-- **Python 3.x**
-- **tkinter**（GUI）
-- **pygame**（音频播放）
-- **PyInstaller**（打包）
-
-## 快速开始
+## Run
 
 ```bash
-# 安装依赖
 pip install -r requirements.txt
-
-# 运行
 python zodiac_app.py
 ```
 
-## 打包
+## Build
 
 ```bash
 pyinstaller zodiac_app.spec
 ```
 
-打包后可执行文件位于 `dist/` 目录。
+The executable lands in `dist/`. The spec bundles the `Music` folder so the packaged
+app still finds its audio file.
+
+## Stack
+
+Python 3, Tkinter, pygame, PyInstaller.
+
+## Notes
+
+- The UI is in Chinese.
+
+## License
+
+MIT
